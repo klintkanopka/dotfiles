@@ -117,10 +117,26 @@ if ! shopt -oq posix; then
 fi
 
 export PATH=$PATH:/usr/share/texlive
-alias python='/usr/bin/python2.7'
+export PATH=$PATH:/home/klint/.local/bin
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/klint/google-cloud-sdk/path.bash.inc' ]; then source '/home/klint/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/klint/google-cloud-sdk/completion.bash.inc' ]; then source '/home/klint/google-cloud-sdk/completion.bash.inc'; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/klint/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/klint/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/klint/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/klint/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

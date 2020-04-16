@@ -13,7 +13,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-files="bashrc vimrc gitconfig taskrc"
+files="bashrc vimrc gitconfig taskrc i3status.conf"
 
 # Create dotfiles_old in home dir
 # -------------------------------

@@ -1,5 +1,4 @@
 colo molokai
-syntax on
 
 set number
 set relativenumber
@@ -29,3 +28,15 @@ set laststatus=2
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="81,".join(range(121,999),",")
 
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'lervag/vimtex'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+call plug#end()
